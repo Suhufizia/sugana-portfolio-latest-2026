@@ -1,10 +1,7 @@
-
 import React from 'react';
 import { BarChart, Brain, Database, Bot } from 'lucide-react';
-
 const About = () => {
-  return (
-    <section id="about" className="py-20 bg-slate-900/50">
+  return <section id="about" className="py-20 bg-slate-900/50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
@@ -17,7 +14,7 @@ const About = () => {
           <div className="space-y-6">
             <p className="text-lg text-slate-300 leading-relaxed">
               I specialize in building <span className="text-cyan-400 font-semibold">autonomous intelligent agents</span> using 
-              <span className="text-blue-400 font-semibold"> LangGraph and LangChain</span>, creating multi-agent systems 
+              <span className="text-blue-400 font-semibold"> LangGraph, LangChain, LlamaIndex, Transformers Agents, DSPy</span>, creating multi-agent systems 
               that solve real-world challenges in research, task automation, and customer support.
             </p>
             
@@ -61,17 +58,11 @@ const About = () => {
                 {/* Agentic AI visualization background */}
                 <div className="absolute inset-0 opacity-20">
                   <div className="grid grid-cols-4 grid-rows-4 h-full w-full gap-2 p-4">
-                    {Array.from({ length: 16 }).map((_, i) => (
-                      <div 
-                        key={i} 
-                        className={`rounded-sm animate-pulse ${
-                          i % 4 === 0 ? 'bg-cyan-400' : 
-                          i % 4 === 1 ? 'bg-blue-400' : 
-                          i % 4 === 2 ? 'bg-purple-400' : 'bg-teal-400'
-                        }`}
-                        style={{ animationDelay: `${i * 100}ms` }}
-                      ></div>
-                    ))}
+                    {Array.from({
+                    length: 16
+                  }).map((_, i) => <div key={i} className={`rounded-sm animate-pulse ${i % 4 === 0 ? 'bg-cyan-400' : i % 4 === 1 ? 'bg-blue-400' : i % 4 === 2 ? 'bg-purple-400' : 'bg-teal-400'}`} style={{
+                    animationDelay: `${i * 100}ms`
+                  }}></div>)}
                   </div>
                 </div>
                 <div className="text-center relative z-10">
@@ -83,8 +74,6 @@ const About = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default About;
