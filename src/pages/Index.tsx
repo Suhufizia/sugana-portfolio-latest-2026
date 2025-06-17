@@ -13,7 +13,7 @@ import Awards from '../components/Awards';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-teal-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-950 to-indigo-950">
       <Navigation />
       <main>
         <Hero />
