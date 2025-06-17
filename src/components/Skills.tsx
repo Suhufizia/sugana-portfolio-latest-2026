@@ -4,6 +4,15 @@ import React from 'react';
 const Skills = () => {
   const skillCategories = [
     {
+      title: 'Agentic AI & Frameworks',
+      skills: [
+        { name: 'LangGraph (Multi-Agent)', level: 95 },
+        { name: 'LangChain (Agent Dev)', level: 92 },
+        { name: 'RAG Agents', level: 90 },
+        { name: 'Task Automation Bots', level: 88 },
+      ]
+    },
+    {
       title: 'Programming & Analytics',
       skills: [
         { name: 'Python (GenAI)', level: 95 },
@@ -20,15 +29,6 @@ const Skills = () => {
         { name: 'Qualtrics Analytics', level: 92 },
         { name: 'Excel Dashboards', level: 88 },
       ]
-    },
-    {
-      title: 'Machine Learning & AI',
-      skills: [
-        { name: 'Statistical Modeling', level: 90 },
-        { name: 'GenAI Implementation', level: 88 },
-        { name: 'Classification Models', level: 85 },
-        { name: 'Regression Analysis', level: 92 },
-      ]
     }
   ];
 
@@ -38,7 +38,7 @@ const Skills = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-white mb-4">Technical Skills</h2>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-            A comprehensive toolkit spanning data science, machine learning, and business intelligence across multiple industries.
+            Specialized expertise in <span className="text-cyan-400 font-semibold">Agentic AI frameworks</span> and comprehensive data science toolkit for building autonomous intelligent systems.
           </p>
         </div>
 
@@ -70,21 +70,43 @@ const Skills = () => {
         </div>
 
         {/* Additional skills showcase */}
-        <div className="mt-16 text-center">
-          <h3 className="text-2xl font-bold text-white mb-8">Additional Expertise</h3>
-          <div className="flex flex-wrap justify-center gap-3">
-            {[
-              'Pandas & NumPy', 'Qualtrics CX/EX', 'MuleSoft Integration', 'Stats iQ',
-              'HTML/CSS/JavaScript', 'API Data Flows', 'Dashboard Creation', 'Survey Analytics',
-              'Fixed Income Analysis', 'Synthetic Data Generation', 'LLM Prompt Engineering'
-            ].map((skill) => (
-              <span 
-                key={skill} 
-                className="px-4 py-2 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 text-cyan-300 text-sm font-medium rounded-full hover:shadow-md hover:shadow-cyan-500/25 transition-all duration-200"
-              >
-                {skill}
-              </span>
-            ))}
+        <div className="mt-16">
+          <h3 className="text-2xl font-bold text-white mb-8 text-center">Agentic AI Specializations</h3>
+          <div className="grid md:grid-cols-2 gap-6 mb-8">
+            <div className="bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/30 rounded-xl p-6">
+              <h4 className="text-lg font-semibold text-cyan-300 mb-3">🤖 Autonomous Research Agents</h4>
+              <p className="text-slate-300 text-sm">Multi-agent systems for automated research, data collection, and analysis using LangGraph orchestration</p>
+            </div>
+            <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/30 rounded-xl p-6">
+              <h4 className="text-lg font-semibold text-blue-300 mb-3">🔍 RAG-Powered Search Agents</h4>
+              <p className="text-slate-300 text-sm">Retrieval-augmented generation systems for intelligent document search and knowledge extraction</p>
+            </div>
+            <div className="bg-gradient-to-r from-purple-500/10 to-indigo-500/10 border border-purple-500/30 rounded-xl p-6">
+              <h4 className="text-lg font-semibold text-purple-300 mb-3">⚡ Task Planning & Automation</h4>
+              <p className="text-slate-300 text-sm">Intelligent workflow automation and task decomposition using advanced agent architectures</p>
+            </div>
+            <div className="bg-gradient-to-r from-indigo-500/10 to-teal-500/10 border border-indigo-500/30 rounded-xl p-6">
+              <h4 className="text-lg font-semibold text-indigo-300 mb-3">💬 Customer Support Agents</h4>
+              <p className="text-slate-300 text-sm">Conversational AI agents with context awareness and multi-turn dialogue capabilities</p>
+            </div>
+          </div>
+          
+          <div className="text-center">
+            <h4 className="text-xl font-semibold text-white mb-6">Core Technologies & Tools</h4>
+            <div className="flex flex-wrap justify-center gap-3">
+              {[
+                'LangGraph Multi-Agent', 'LangChain Agents', 'OpenAI Function Calling', 'Anthropic Claude',
+                'Vector Databases', 'Pinecone', 'Chroma', 'FAISS', 'Pandas & NumPy', 'FastAPI',
+                'Streamlit', 'Gradio', 'Docker', 'AWS/GCP', 'Prompt Engineering', 'Tool Integration'
+              ].map((skill) => (
+                <span 
+                  key={skill} 
+                  className="px-4 py-2 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 text-cyan-300 text-sm font-medium rounded-full hover:shadow-md hover:shadow-cyan-500/25 transition-all duration-200"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </div>

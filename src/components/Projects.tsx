@@ -1,48 +1,51 @@
 
 import React from 'react';
-import { ExternalLink, Github, Brain, TrendingUp, Smartphone, Video } from 'lucide-react';
+import { ExternalLink, Github, Brain, TrendingUp, Smartphone, Video, Bot, Search } from 'lucide-react';
 
 const Projects = () => {
   const projects = [
     {
       title: 'ResumeForge – An Agentic AI Application',
-      description: 'Personal portfolio project featuring advanced AI-powered resume generation and optimization. Built with modern GenAI techniques for personalized career document creation.',
-      image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop',
-      technologies: ['Python', 'GenAI', 'Machine Learning', 'NLP'],
+      description: 'Advanced multi-agent system using LangGraph for autonomous resume generation and optimization. Features intelligent research agents, content planning agents, and formatting agents working collaboratively to create personalized career documents.',
+      image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop',
+      technologies: ['LangGraph', 'LangChain', 'Multi-Agent Systems', 'RAG', 'Python'],
       liveUrl: '#',
       githubUrl: '#',
       featured: true,
-      icon: Brain
+      icon: Bot,
+      agenticFeatures: ['Autonomous Research Agents', 'Task Planning & Decomposition', 'Multi-Agent Coordination']
+    },
+    {
+      title: 'Autonomous Research Agent System',
+      description: 'Sophisticated multi-agent research platform built with LangGraph, featuring specialized agents for data collection, analysis, and synthesis. Demonstrates advanced agent orchestration and task automation for complex research workflows.',
+      image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=600&h=400&fit=crop',
+      technologies: ['LangGraph', 'Multi-Agent Architecture', 'RAG', 'Vector Search', 'Task Automation'],
+      liveUrl: '#',
+      githubUrl: '#',
+      featured: true,
+      icon: Search,
+      agenticFeatures: ['Intelligent Web Scraping Agents', 'Document Analysis Agents', 'Synthesis & Reporting Agents']
     },
     {
       title: 'Walmart Sales Forecasting',
-      description: 'Comprehensive retail sales forecasting solution using advanced time series analysis and machine learning models to predict sales trends and optimize inventory management.',
+      description: 'Comprehensive retail sales forecasting solution enhanced with agentic components for automated data preprocessing, feature engineering, and model optimization using intelligent agent workflows.',
       image: 'https://images.unsplash.com/photo-1556740749-887f6717d7e4?w=600&h=400&fit=crop',
-      technologies: ['Python', 'Time Series', 'Forecasting', 'Retail Analytics'],
+      technologies: ['Python', 'Time Series', 'Forecasting', 'Agent-Based Preprocessing', 'Retail Analytics'],
       liveUrl: '#',
       githubUrl: '#',
-      featured: true,
+      featured: false,
       icon: TrendingUp
     },
     {
-      title: 'Vivid – App Showcase',
-      description: 'Mobile application showcase platform featuring interactive demonstrations, user engagement analytics, and modern UI/UX design principles.',
-      image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=400&fit=crop',
-      technologies: ['React', 'JavaScript', 'UI/UX', 'Analytics'],
+      title: 'RAG-Powered Customer Support Agent',
+      description: 'Intelligent customer support system using RAG agents with LangChain for context-aware responses, ticket routing, and automated issue resolution with multi-turn conversation capabilities.',
+      image: 'https://images.unsplash.com/photo-1544377193-33dcf4d68fb5?w=600&h=400&fit=crop',
+      technologies: ['LangChain', 'RAG', 'Vector Database', 'Conversational AI', 'Customer Support'],
       liveUrl: '#',
       githubUrl: '#',
       featured: false,
-      icon: Smartphone
-    },
-    {
-      title: 'Capture – Video Agency',
-      description: 'Professional video agency platform with content management, client portfolio showcase, and integrated booking system for creative services.',
-      image: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=600&h=400&fit=crop',
-      technologies: ['Web Development', 'CMS', 'Portfolio Management'],
-      liveUrl: '#',
-      githubUrl: '#',
-      featured: false,
-      icon: Video
+      icon: Brain,
+      agenticFeatures: ['Context-Aware Responses', 'Automated Ticket Routing', 'Multi-Turn Dialogue Management']
     }
   ];
 
@@ -50,9 +53,9 @@ const Projects = () => {
     <section id="projects" className="py-20 bg-slate-900/50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-4">Featured Projects</h2>
+          <h2 className="text-4xl font-bold text-white mb-4">Featured Agentic AI Projects</h2>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-            A selection of data science and development projects showcasing expertise in AI, analytics, and full-stack development.
+            Real-world applications of <span className="text-cyan-400 font-semibold">autonomous intelligent agents</span> showcasing expertise in LangGraph, LangChain, and multi-agent systems.
           </p>
         </div>
 
@@ -71,6 +74,20 @@ const Projects = () => {
                     <project.icon className="text-cyan-400" size={24} />
                   </div>
                 </div>
+                {project.agenticFeatures && (
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <div className="bg-slate-900/80 backdrop-blur-sm border border-cyan-500/30 rounded-lg p-2">
+                      <p className="text-cyan-300 text-xs font-semibold mb-1">Agentic Features:</p>
+                      <div className="flex flex-wrap gap-1">
+                        {project.agenticFeatures.map((feature) => (
+                          <span key={feature} className="text-xs bg-cyan-500/20 text-cyan-300 px-2 py-1 rounded">
+                            {feature}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
               
               <div className={`p-6 ${project.featured ? 'md:p-8 md:flex md:flex-col md:justify-center' : ''}`}>
@@ -79,7 +96,14 @@ const Projects = () => {
                 
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.technologies.map((tech) => (
-                    <span key={tech} className="px-3 py-1 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 text-cyan-300 text-sm font-medium rounded-full">
+                    <span 
+                      key={tech} 
+                      className={`px-3 py-1 text-sm font-medium rounded-full ${
+                        tech.includes('LangGraph') || tech.includes('LangChain') || tech.includes('Multi-Agent') || tech.includes('RAG') 
+                          ? 'bg-gradient-to-r from-cyan-500/30 to-blue-500/30 border border-cyan-400/50 text-cyan-200' 
+                          : 'bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 text-cyan-300'
+                      }`}
+                    >
                       {tech}
                     </span>
                   ))}
@@ -108,6 +132,50 @@ const Projects = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Agentic AI Expertise Highlight */}
+        <div className="mt-16 bg-gradient-to-r from-cyan-500/10 via-blue-500/10 to-purple-500/10 border border-cyan-500/30 rounded-2xl p-8">
+          <div className="text-center mb-8">
+            <h3 className="text-3xl font-bold text-white mb-4">Agentic AI Expertise</h3>
+            <p className="text-slate-300 max-w-3xl mx-auto">
+              Practical, hands-on experience building production-ready autonomous agents for diverse domains
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-4 gap-6">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-cyan-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Bot className="text-cyan-400" size={32} />
+              </div>
+              <h4 className="font-semibold text-white mb-2">Multi-Agent Systems</h4>
+              <p className="text-slate-400 text-sm">Orchestrated agent collaboration using LangGraph</p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Search className="text-blue-400" size={32} />
+              </div>
+              <h4 className="font-semibold text-white mb-2">Research Automation</h4>
+              <p className="text-slate-400 text-sm">Autonomous data collection and analysis agents</p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 bg-purple-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Brain className="text-purple-400" size={32} />
+              </div>
+              <h4 className="font-semibold text-white mb-2">RAG Agents</h4>
+              <p className="text-slate-400 text-sm">Context-aware retrieval and generation systems</p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 bg-indigo-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <TrendingUp className="text-indigo-400" size={32} />
+              </div>
+              <h4 className="font-semibold text-white mb-2">Task Planning</h4>
+              <p className="text-slate-400 text-sm">Intelligent workflow decomposition and execution</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

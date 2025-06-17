@@ -36,8 +36,8 @@ const Hero = () => {
             </span>
           </h1>
           
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-slate-300 mb-4">
-            Data Scientist
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-slate-300 mb-2">
+            Agentic AI Data Scientist
           </h2>
 
           <div className="flex items-center justify-center text-slate-400 mb-6">
@@ -45,8 +45,12 @@ const Hero = () => {
             <span className="text-lg">Bangalore, India</span>
           </div>
           
-          <p className="text-xl sm:text-2xl text-slate-300 mb-8 max-w-4xl mx-auto leading-relaxed">
-            Analytical and collaborative Data Science professional delivering end-to-end analytics solutions with advanced ML, GenAI, and statistical modeling
+          <p className="text-xl sm:text-2xl text-slate-300 mb-4 max-w-4xl mx-auto leading-relaxed">
+            Specializing in autonomous intelligent agents with <span className="text-cyan-400 font-semibold">LangGraph & LangChain</span> for real-world applications
+          </p>
+          
+          <p className="text-lg text-slate-400 mb-8 max-w-3xl mx-auto">
+            Building multi-agent systems, RAG agents, and task automation bots for search, research, and customer support
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
