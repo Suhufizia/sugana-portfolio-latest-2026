@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Github, Linkedin } from 'lucide-react';
 import { useToast } from '../hooks/use-toast';
 
 const Contact = () => {
@@ -21,7 +21,6 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate form submission
     toast({
       title: "Message sent!",
       description: "Thanks for reaching out. I'll get back to you soon.",
@@ -30,12 +29,13 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-white">
+    <section id="contact" className="py-20 bg-gradient-to-br from-blue-50 to-teal-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Have a project in mind or just want to chat? I'd love to hear from you. Let's create something amazing together.
+            Interested in data science collaboration, consulting opportunities, or discussing innovative analytics solutions? 
+            Let's connect and explore how we can work together.
           </p>
         </div>
 
@@ -45,8 +45,8 @@ const Contact = () => {
             <div>
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Let's Connect</h3>
               <p className="text-gray-600 mb-8 leading-relaxed">
-                I'm always interested in hearing about new opportunities, 
-                interesting projects, or just having a friendly conversation about technology and design.
+                I'm always interested in discussing new opportunities in data science, machine learning projects, 
+                or collaborating on innovative analytics solutions across various industries.
               </p>
             </div>
 
@@ -57,34 +57,61 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900">Email</h4>
-                  <p className="text-gray-600">alex@example.com</p>
+                  <a href="mailto:srisuhana19935@gmail.com" className="text-gray-600 hover:text-blue-600 transition-colors">
+                    srisuhana19935@gmail.com
+                  </a>
                 </div>
               </div>
 
               <div className="flex items-center space-x-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
-                  <Phone className="text-purple-600" size={20} />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-900">Phone</h4>
-                  <p className="text-gray-600">+1 (555) 123-4567</p>
-                </div>
-              </div>
-
-              <div className="flex items-center space-x-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-pink-100 rounded-lg flex items-center justify-center">
-                  <MapPin className="text-pink-600" size={20} />
+                <div className="flex-shrink-0 w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center">
+                  <MapPin className="text-teal-600" size={20} />
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900">Location</h4>
-                  <p className="text-gray-600">San Francisco, CA</p>
+                  <p className="text-gray-600">Bangalore, India</p>
                 </div>
+              </div>
+
+              <div className="flex items-center space-x-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                  <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-900">Availability</h4>
+                  <p className="text-gray-600">Available for new opportunities</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Social Links */}
+            <div className="pt-8 border-t border-gray-200">
+              <h4 className="font-semibold text-gray-900 mb-4">Connect with me</h4>
+              <div className="flex space-x-4">
+                <a 
+                  href="https://github.com/suhufizia" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-2 px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors duration-200"
+                >
+                  <Github size={20} />
+                  <span>GitHub</span>
+                </a>
+                <a 
+                  href="https://linkedin.com/in/srisugana" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200"
+                >
+                  <Linkedin size={20} />
+                  <span>LinkedIn</span>
+                </a>
               </div>
             </div>
           </div>
 
           {/* Contact Form */}
-          <div className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl p-8">
+          <div className="bg-white rounded-2xl p-8 shadow-lg">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid sm:grid-cols-2 gap-6">
                 <div>
@@ -147,13 +174,13 @@ const Contact = () => {
                   required
                   rows={6}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200 resize-none"
-                  placeholder="Tell me about your project or just say hello..."
+                  placeholder="Tell me about your project or opportunity..."
                 ></textarea>
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-4 px-6 rounded-lg hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center space-x-2"
+                className="w-full bg-gradient-to-r from-blue-600 to-teal-600 text-white font-semibold py-4 px-6 rounded-lg hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center space-x-2"
               >
                 <Send size={20} />
                 <span>Send Message</span>
@@ -165,7 +192,7 @@ const Contact = () => {
         {/* Footer */}
         <div className="mt-16 pt-8 border-t border-gray-200 text-center">
           <p className="text-gray-600">
-            © 2024 Alex Johnson. Built with ❤️ using React and Tailwind CSS.
+            © 2024 Sri Sugana H. Data Scientist specializing in GenAI, Machine Learning, and Advanced Analytics.
           </p>
         </div>
       </div>
