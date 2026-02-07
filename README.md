@@ -1,73 +1,23 @@
-# Welcome to your Lovable project
+#### Sugana — Data Science & GenAI Portfolio
 
-## Project info
+https://sugana-latest-portfolio-2026.web.app/
 
-**URL**: https://lovable.dev/projects/94e4fe21-ffa3-45b0-8311-acd4da04630f
+A personal portfolio showcasing my work across data science, agentic AI, and analytics engineering—including selected projects, professional experience, and certifications.
+Highlights
 
-## How can I edit this code?
+Conversational AI Chatbot: A multi-turn chatbot experience featuring modern LLM workflows and components such as RAG, vector search, and multi-agent orchestration (as showcased in the portfolio projects section). Concepts like context-aware dialogue and omnichannel-style integration are common in modern conversational AI systems. 2 3
+Walmart Sales Forecasting: A retail forecasting project focused on time-series forecasting and feature-driven modeling, where seasonality and holidays are typical drivers of variance in weekly demand. 4
+Experience Timeline: Roles spanning Data Analyst → Data Scientist with enterprise delivery, plus independent Agentic AI & Conversational Intelligence initiatives.
 
-There are several ways of editing your application.
+Built With
 
-**Use Lovable**
+React (component-based UI)
+Tailwind CSS (utility-first styling)
+lucide-react (icon set)
+Firebase Hosting (deployment, based on the hosting domain)
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/94e4fe21-ffa3-45b0-8311-acd4da04630f) and start prompting.
+Portfolio Sections
 
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/94e4fe21-ffa3-45b0-8311-acd4da04630f) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Projects: Project cards with capability tags and actions (e.g., Live Demo / Code).
+Experience: Timeline-style layout with role summaries and impact bullets.
+Certifications: Industry credentials and specialized training.
