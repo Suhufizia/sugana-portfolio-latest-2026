@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { MapPin, Calendar, Building } from 'lucide-react';
 
@@ -8,22 +7,42 @@ const Experience = () => {
       title: 'Data Scientist',
       company: 'Deloitte',
       location: 'Bangalore, India',
-      period: '2023 - Present',
-      description: 'Leading GenAI-powered solutions development and advanced analytics projects for enterprise clients across multiple industries.',
+      period: '2024 - Present',
+      description:
+        'Driving full-cycle data science and machine learning projects for Kaiser Foundations, focused on churn prediction and scalable analytics pipelines.',
+      achievements: [
+        'Built Databricks pipeline for automated churn prediction',
+        'Delivered EDA and feature engineering for business insights',
+        'Managed feature store tables for scalable model reuse',
+        'Created automated file flow (SFTP to ADLS) for secure data ingestion',
+        'Developed XGBoost and LightGBM models, tracked via MLflow',
+        'Produced deployable baseline model for client use',
+        'Defined analytics logic in collaboration with stakeholders'
+      ],
+      color: 'blue'
+    },
+    {
+      title: 'Data Scientist',
+      company: 'Deloitte',
+      location: 'Bangalore, India',
+      period: '2023 - 2024',
+      description:
+        'Leading GenAI-powered solutions development and advanced analytics projects for enterprise clients across multiple industries.',
       achievements: [
         'Developed GenAI-powered solutions for transforming unstructured tagged data into structured formats',
         'Generated synthetic datasets for robust model training and validation',
         'Engineered advanced prompts for LLMs for industry-specific scenarios',
         'Delivered end-to-end analytics solutions for finance, healthcare, and retail sectors'
       ],
-      color: 'blue'
+      color: 'teal'
     },
     {
       title: 'Data Analyst',
       company: 'Deloitte',
       location: 'Bangalore, India',
       period: '2022 - 2023',
-      description: 'Specialized in customer experience analytics, survey design, and data visualization solutions for enterprise clients.',
+      description:
+        'Specialized in customer experience analytics, survey design, and data visualization solutions for enterprise clients.',
       achievements: [
         'Designed and implemented customized Qualtrics CX and EX surveys using advanced HTML and JavaScript',
         'Streamlined data collection and reporting workflows, improving efficiency by 40%',
@@ -31,31 +50,54 @@ const Experience = () => {
         'Collaborated on MuleSoft integrations and optimized API data flows',
         'Used Stats iQ, Python, and R for advanced analytics and insights generation'
       ],
-      color: 'teal'
+      color: 'indigo'
     },
     {
-      title: 'Data Science and Analytics Specialist',
+      title: 'Agentic AI & Conversational Intelligence Projects',
       company: 'External Projects & Initiatives',
       location: 'Remote',
-      period: '2021 - 2022',
-      description: 'Independent data science projects focusing on financial analysis, business intelligence, and machine learning applications.',
+      period: '2025',
+      description:
+        'Independently designed, built, and deployed advanced AI applications using agentic design and generative LLMs—led requirements, architecture, coding, integration, and deployment.',
       achievements: [
-        'Classified fixed income securities by sector using machine learning algorithms',
-        'Built comprehensive Tableau and Excel dashboards for sales analysis',
-        'Implemented pandas, numpy, regression models, and classifier evaluation techniques',
-        'Delivered actionable insights for business decision-making across multiple sectors'
+        'Developed the Agentic Intelligence Platform – PDF Agent for PDF Q&A, summarization, and web search using Python + Streamlit',
+        'Integrated Groq LLM, LangGraph, and multi-agent orchestration for grounded document intelligence',
+        'Created a cloud-deployed, multi-turn Conversational AI Chatbot using Llama 3 via Groq API with a modern Streamlit UI',
+        'Published live demos with open-source code, showcasing AI integration and scalable user experience',
+        'Pioneered agentic workflow automation, prompt engineering, and multi-agent coordination'
       ],
-      color: 'indigo'
+      color: 'purple'
     }
   ];
 
-  const getColorClasses = (color: string) => {
+  const getColorClasses = (color) => {
     const colorMap = {
       blue: 'border-blue-500 bg-blue-500',
       teal: 'border-teal-500 bg-teal-500',
-      indigo: 'border-indigo-500 bg-indigo-500'
+      indigo: 'border-indigo-500 bg-indigo-500',
+      purple: 'border-purple-500 bg-purple-500'
     };
-    return colorMap[color as keyof typeof colorMap] || 'border-blue-500 bg-blue-500';
+    return colorMap[color] || 'border-blue-500 bg-blue-500';
+  };
+
+  const getTextColor = (color) => {
+    const textMap = {
+      blue: 'text-blue-600',
+      teal: 'text-teal-600',
+      indigo: 'text-indigo-600',
+      purple: 'text-purple-600'
+    };
+    return textMap[color] || 'text-blue-600';
+  };
+
+  const getDotColor = (color) => {
+    const dotMap = {
+      blue: 'bg-blue-600',
+      teal: 'bg-teal-600',
+      indigo: 'bg-indigo-600',
+      purple: 'bg-purple-600'
+    };
+    return dotMap[color] || 'bg-blue-600';
   };
 
   return (
@@ -69,50 +111,62 @@ const Experience = () => {
         </div>
 
         <div className="relative">
-          {/* Timeline line */}
-          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-px bg-gray-300 h-full"></div>
+          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-px bg-gray-300 h-full" />
 
           <div className="space-y-12">
-            {experiences.map((exp, index) => (
-              <div key={index} className={`relative md:flex md:items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
-                {/* Timeline dot */}
-                <div className={`hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full border-4 border-white shadow-lg z-10 ${getColorClasses(exp.color)}`}></div>
+            {experiences.map((exp, index) => {
+              const isExternal = exp.company === 'External Projects & Initiatives';
 
-                <div className={`md:w-1/2 ${index % 2 === 0 ? 'md:pr-8' : 'md:pl-8'}`}>
-                  <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
-                      <h3 className="text-xl font-bold text-gray-900">{exp.title}</h3>
-                      <div className={`flex items-center text-sm font-medium mt-1 sm:mt-0 ${exp.color === 'blue' ? 'text-blue-600' : exp.color === 'teal' ? 'text-teal-600' : 'text-indigo-600'}`}>
-                        <Calendar size={16} className="mr-1" />
-                        {exp.period}
-                      </div>
-                    </div>
-                    
-                    <div className="mb-4">
-                      <div className="flex items-center mb-2">
-                        <Building size={18} className={`mr-2 ${exp.color === 'blue' ? 'text-blue-600' : exp.color === 'teal' ? 'text-teal-600' : 'text-indigo-600'}`} />
-                        <h4 className="text-lg font-semibold text-gray-800">{exp.company}</h4>
-                      </div>
-                      <div className="flex items-center text-gray-500 text-sm">
-                        <MapPin size={16} className="mr-1" />
-                        {exp.location}
-                      </div>
-                    </div>
+              return (
+                <div
+                  key={`${exp.title}-${exp.period}-${index}`}
+                  className={`relative md:flex md:items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
+                >
+                  {/* Timeline dot (smaller for External Projects) */}
+                  <div
+                    className={[
+                      'hidden md:block absolute left-1/2 transform -translate-x-1/2 rounded-full border-white z-10',
+                      isExternal ? 'w-3 h-3 border-2 shadow-md' : 'w-4 h-4 border-4 shadow-lg',
+                      getColorClasses(exp.color)
+                    ].join(' ')}
+                  />
 
-                    <p className="text-gray-600 mb-4 leading-relaxed">{exp.description}</p>
-
-                    <div className="space-y-2">
-                      {exp.achievements.map((achievement, achIndex) => (
-                        <div key={achIndex} className="flex items-start">
-                          <div className={`w-2 h-2 rounded-full mt-2 mr-3 flex-shrink-0 ${exp.color === 'blue' ? 'bg-blue-600' : exp.color === 'teal' ? 'bg-teal-600' : 'bg-indigo-600'}`}></div>
-                          <p className="text-gray-700 text-sm">{achievement}</p>
+                  <div className={`md:w-1/2 ${index % 2 === 0 ? 'md:pr-8' : 'md:pl-8'}`}>
+                    <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+                        <h3 className="text-xl font-bold text-gray-900">{exp.title}</h3>
+                        <div className={`flex items-center text-sm font-medium mt-1 sm:mt-0 ${getTextColor(exp.color)}`}>
+                          <Calendar size={16} className="mr-1" />
+                          {exp.period}
                         </div>
-                      ))}
+                      </div>
+
+                      <div className="mb-4">
+                        <div className="flex items-center mb-2">
+                          <Building size={18} className={`mr-2 ${getTextColor(exp.color)}`} />
+                          <h4 className="text-lg font-semibold text-gray-800">{exp.company}</h4>
+                        </div>
+                        <div className="flex items-center text-gray-500 text-sm">
+                          <MapPin size={16} className="mr-1" />
+                          {exp.location}
+                        </div>
+                      </div>
+
+                      <p className="text-gray-600 mb-4 leading-relaxed">{exp.description}</p>
+
+                      <div className="space-y-2">
+                        {exp.achievements.map((achievement, achIndex) => (
+                          <div key={`${exp.period}-${achIndex}`} className="flex items-start">
+                            <div className={`w-2 h-2 rounded-full mt-2 mr-3 flex-shrink-0 ${getDotColor(exp.color)}`} />
+                            <p className="text-gray-700 text-sm">{achievement}</p>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>

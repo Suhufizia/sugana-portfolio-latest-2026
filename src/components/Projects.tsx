@@ -5,47 +5,35 @@ import { ExternalLink, Github, Brain, TrendingUp, Smartphone, Video, Bot, Search
 const Projects = () => {
   const projects = [
     {
-      title: 'ResumeForge – An Agentic AI Application',
-      description: 'Advanced multi-agent system using LangGraph for autonomous resume generation and optimization. Features intelligent research agents, content planning agents, and formatting agents working collaboratively to create personalized career documents.',
+      title: 'Agentic Intelligence Platform – PDF Agent',
+      description: 'A production-grade autonomous agent platform built in Python and Streamlit. Enables intelligent PDF Q&A, document summarization, and agentic web search using Groq LLM and LangGraph. This demo showcases advanced multi-agent workflows, tool integrations, and custom streamlit UI for agentic document intelligence.',
       image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop',
       technologies: ['LangGraph', 'LangChain', 'Multi-Agent Systems', 'RAG', 'Python'],
-      liveUrl: '#',
-      githubUrl: '#',
+      liveUrl: 'https://sugana-agentic-intelligence-platform.streamlit.app/',
+      githubUrl: 'https://github.com/Suhufizia/Agentic-Intelligence-Platform',
       featured: true,
       icon: Bot,
-      agenticFeatures: ['Autonomous Research Agents', 'Task Planning & Decomposition', 'Multi-Agent Coordination']
+      agenticFeatures: ['Intelligent PDF Q&A', 'Document Summarization', 'Agentic Tool Integration', 'Streamlit UI', 'Customizable LLM Selection', 'Web Search using Tavern API']
     },
     {
-      title: 'Autonomous Research Agent System',
-      description: 'Sophisticated multi-agent research platform built with LangGraph, featuring specialized agents for data collection, analysis, and synthesis. Demonstrates advanced agent orchestration and task automation for complex research workflows.',
+      title: 'Conversational AI Chatbot',
+      description: 'Experience seamless, intelligent interaction with our Conversational AI Chatbot—powered by Streamlit, LangChain, and Llama 3 via the Groq API. Delivers real-time, multi-turn, context-aware conversations in a secure, modern interface. Combines state-of-the-art NLP with robust cloud deployment for reliable, scalable, and engaging AI-driven experiences.',
       image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=600&h=400&fit=crop',
       technologies: ['LangGraph', 'Multi-Agent Architecture', 'RAG', 'Vector Search', 'Task Automation'],
-      liveUrl: '#',
-      githubUrl: '#',
+      liveUrl: 'https://sugana-langchain-chatbot.streamlit.app/',
+      githubUrl: 'https://github.com/Suhufizia/Langchain-Chatbot',
       featured: true,
       icon: Search,
-      agenticFeatures: ['Intelligent Web Scraping Agents', 'Document Analysis Agents', 'Synthesis & Reporting Agents']
+      agenticFeatures: ['Multi-turn Conversation', 'Context-Aware Responses', 'Modern Streamlit UI', 'Real-Time NLP via Groq/Llama 3']
     },
     {
       title: 'Walmart Sales Forecasting',
       description: 'Comprehensive retail sales forecasting solution enhanced with agentic components for automated data preprocessing, feature engineering, and model optimization using intelligent agent workflows.',
       image: 'https://images.unsplash.com/photo-1556740749-887f6717d7e4?w=600&h=400&fit=crop',
       technologies: ['Python', 'Time Series', 'Forecasting', 'Agent-Based Preprocessing', 'Retail Analytics'],
-      liveUrl: '#',
-      githubUrl: '#',
-      featured: false,
+      githubUrl: 'https://github.com/Suhufizia/Store-Wise-Sales-Forecasting-for-a-Major-Retailer-in-US',
+      featured: true,
       icon: TrendingUp
-    },
-    {
-      title: 'RAG-Powered Customer Support Agent',
-      description: 'Intelligent customer support system using RAG agents with LangChain for context-aware responses, ticket routing, and automated issue resolution with multi-turn conversation capabilities.',
-      image: 'https://images.unsplash.com/photo-1544377193-33dcf4d68fb5?w=600&h=400&fit=crop',
-      technologies: ['LangChain', 'RAG', 'Vector Database', 'Conversational AI', 'Customer Support'],
-      liveUrl: '#',
-      githubUrl: '#',
-      featured: false,
-      icon: Brain,
-      agenticFeatures: ['Context-Aware Responses', 'Automated Ticket Routing', 'Multi-Turn Dialogue Management']
     }
   ];
 
@@ -110,15 +98,17 @@ const Projects = () => {
                 </div>
                 
                 <div className="flex gap-4">
-                  <a 
-                    href={project.liveUrl} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg hover:shadow-lg hover:shadow-cyan-500/25 transition-all duration-200 transform hover:-translate-y-0.5"
-                  >
-                    <ExternalLink size={16} />
-                    Live Demo
-                  </a>
+                  {project.liveUrl && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg hover:shadow-lg hover:shadow-cyan-500/25 transition-all duration-200 transform hover:-translate-y-0.5"
+                    >
+                      <ExternalLink size={16} />
+                      Live Demo
+                    </a>
+                  )}
                   <a 
                     href={project.githubUrl} 
                     target="_blank" 

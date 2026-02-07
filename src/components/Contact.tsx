@@ -192,7 +192,7 @@ const Contact = () => {
         {/* Footer */}
         <div className="mt-16 pt-8 border-t border-gray-200 text-center">
           <p className="text-gray-600">
-            © 2024 Sri Sugana H. Data Scientist specializing in GenAI, Machine Learning, and Advanced Analytics.
+            © 2026 Sri Sugana H. Data Scientist specializing in GenAI, Machine Learning, and Advanced Analytics.
           </p>
         </div>
       </div>
